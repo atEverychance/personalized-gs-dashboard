@@ -1,5 +1,5 @@
 import './App.css'
-import { Bell, ChevronRight, Home, FileText, Tag, Menu, Navigation, Plus, Pill, MessageCircle, Search, Shield, Heart, Target } from 'lucide-react'
+import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNotifications } from '@/context/NotificationsContext'
@@ -194,31 +194,23 @@ function App() {
               {/* Quick Access Services */}
               <div className="mb-4">
                 <p className="text-gray-600 font-medium mb-3">Quick Access</p>
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center">
-                      <MessageCircle className="w-6 h-6 text-teal-600" />
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { label: 'Mental Health', Icon: Brain },
+                    { label: 'Telemedicine', Icon: Stethoscope },
+                    { label: 'Pharmacy', Icon: Pill },
+                    { label: 'Well-being', Icon: Heart },
+                    { label: 'Total Health and Life Services', Icon: BriefcaseMedical },
+                  ].map(({ label, Icon }) => (
+                    <div key={label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-9 h-9 rounded-md bg-white/70 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-teal-700" />
+                        </div>
+                        <span className="text-sm font-medium text-teal-900">{label}</span>
+                      </div>
                     </div>
-                    <span className="text-xs text-center font-medium">Counselling</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <Pill className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <span className="text-xs text-center font-medium">Pharmacy</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Plus className="w-6 h-6 text-green-600" />
-                    </div>
-                    <span className="text-xs text-center font-medium">Telemedicine</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Navigation className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <span className="text-xs text-center font-medium">Care Nav</span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

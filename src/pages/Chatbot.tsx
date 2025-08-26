@@ -35,7 +35,7 @@ export default function ChatbotPage() {
           <button aria-label="Back" onClick={() => navigate(-1)} className="p-1 -ml-2">
             <ArrowLeft className="w-6 h-6" />
           </button>
-          <div className="font-semibold">Wliki</div>
+          <div className="font-semibold">Wilki</div>
           <div className="w-6" />
         </div>
       </div>

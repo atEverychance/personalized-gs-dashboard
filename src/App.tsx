@@ -231,7 +231,7 @@ function App() {
 
               {/* Quick Access Services */}
               <div className="mb-4">
-                <p className="text-gray-600 font-medium mb-3">Quick Access</p>
+                <p className="text-gray-600 font-medium mb-3">Most Popular</p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { label: 'Mental Health', Icon: Brain },

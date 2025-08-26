@@ -1,12 +1,15 @@
 import './App.css'
 import { Bell, ChevronRight, Home, FileText, Tag, Menu, Navigation, Plus, Pill, MessageCircle, Search, Shield, Heart, Target } from 'lucide-react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useNotifications } from '@/context/NotificationsContext'
 
 function App() {
   const [activeMode, setActiveMode] = useState<'coverage' | 'care'>('care')
+  const navigate = useNavigate()
+  const { unreadCount } = useNotifications()
   return (
     <div className="min-h-screen bg-teal-800 text-white font-sans">
-      {/* Status Bar */}
       <div className="flex justify-between items-center px-4 py-2 text-sm font-medium">
         <span>9:41</span>
         <div className="flex items-center space-x-1">
@@ -25,16 +28,16 @@ function App() {
         </div>
       </div>
 
-      {/* Header with Notifications, Toggle, and Search */}
       <div className="flex justify-between items-center px-4 py-4">
-        <div className="relative">
+        <button className="relative" onClick={() => navigate('/notifications')} aria-label="Notifications">
           <Bell className="w-6 h-6" />
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-            3
-          </div>
-        </div>
+          {unreadCount > 0 && (
+            <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {unreadCount}
+            </div>
+          )}
+        </button>
         
-        {/* Coverage/Care Toggle - Centered */}
         <div className="bg-teal-700 rounded-full p-1 flex">
           <button
             onClick={() => setActiveMode('coverage')}

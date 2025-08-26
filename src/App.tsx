@@ -72,12 +72,12 @@ function App() {
           </button>
         </div>
         
-        <div className="relative">
+        <button className="relative" onClick={() => navigate('/chat')} aria-label="Messages">
           <MessageCircle className="w-6 h-6" />
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
             1
           </div>
-        </div>
+        </button>
       </div>
 
 

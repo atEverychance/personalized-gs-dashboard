@@ -191,6 +191,44 @@ function App() {
                 </div>
               </div>
 
+              {/* Your Health Journey */}
+              <div className="mb-8">
+                <h2 className="text-xl font-bold mb-4">Your Health Journey</h2>
+                
+                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100 mb-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                        <Target className="w-4 h-4 text-emerald-600" />
+                      </div>
+                      <span className="font-semibold text-gray-800">Goal Progress</span>
+                    </div>
+                    <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-700">Stress Management</span>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-16 h-2 bg-gray-200 rounded-full">
+                          <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
+                        </div>
+                        <span className="text-xs text-gray-600">75%</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-700">Sleep Quality</span>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-16 h-2 bg-gray-200 rounded-full">
+                          <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
+                        </div>
+                        <span className="text-xs text-gray-600">50%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Quick Access Services */}
               <div className="mb-4">
                 <p className="text-gray-600 font-medium mb-3">Quick Access</p>
@@ -211,44 +249,6 @@ function App() {
                       </div>
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Your Health Journey */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4">Your Health Journey</h2>
-              
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100 mb-4">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                      <Target className="w-4 h-4 text-emerald-600" />
-                    </div>
-                    <span className="font-semibold text-gray-800">Goal Progress</span>
-                  </div>
-                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-700">Stress Management</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-gray-200 rounded-full">
-                        <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
-                      </div>
-                      <span className="text-xs text-gray-600">75%</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-700">Sleep Quality</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-gray-200 rounded-full">
-                        <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
-                      </div>
-                      <span className="text-xs text-gray-600">50%</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

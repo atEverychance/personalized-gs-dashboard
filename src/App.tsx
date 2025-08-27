@@ -400,26 +400,24 @@ function App() {
                 <div className="-mx-4 px-4" aria-label="Coverage quick actions">
                   <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
                     {[
-                      { label: 'Travel', Icon: Plane, header: 'bg-gradient-to-br from-teal-500 to-cyan-500', badgeText: undefined, badgeColor: '' },
-                      { label: 'Medication Prior Authorization', Icon: CheckSquare, header: 'bg-gradient-to-br from-amber-400 to-orange-500', badgeText: undefined, badgeColor: '' },
-                      { label: 'Health and Dental', Icon: Heart, header: 'bg-gradient-to-br from-rose-500 to-pink-500', badgeText: 'Benefits', badgeColor: 'bg-rose-600' },
-                      { label: 'Care Services', Icon: Stethoscope, header: 'bg-gradient-to-br from-indigo-500 to-violet-500', badgeText: 'Benefits', badgeColor: 'bg-indigo-600' },
-                      { label: 'Benefits Booklet', Icon: BookOpen, header: 'bg-gradient-to-br from-sky-500 to-blue-600', badgeText: 'PDF', badgeColor: 'bg-sky-600' },
-                    ].map(({ label, Icon, header, badgeText, badgeColor }) => (
+                      { label: 'Travel', Icon: Plane, badgeText: 'Popular', badgeColor: 'bg-teal-600' },
+                      { label: 'Medication Prior Authorization', Icon: CheckSquare, badgeText: 'New', badgeColor: 'bg-amber-500' },
+                      { label: 'Health and Dental', Icon: Heart, badgeText: 'Benefits', badgeColor: 'bg-rose-600' },
+                      { label: 'Care Services', Icon: Stethoscope, badgeText: 'Benefits', badgeColor: 'bg-indigo-600' },
+                      { label: 'Benefits Booklet', Icon: BookOpen, badgeText: 'PDF', badgeColor: 'bg-sky-600' },
+                    ].map(({ label, Icon, badgeText, badgeColor }) => (
                       <button
                         key={label}
                         className="snap-start shrink-0 w-72 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                         aria-label={label}
                       >
-                        <div className={`relative h-44 ${header} flex items-center justify-center`}>
+                        <div className="relative h-44 flex items-center justify-center">
                           {badgeText && (
                             <div className={`absolute top-3 left-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded ${badgeColor}`}>
                               {badgeText}
                             </div>
                           )}
-                          <div className="w-20 h-20 rounded-2xl bg-white/90 backdrop-blur flex items-center justify-center shadow">
-                            <Icon className="w-10 h-10 text-teal-700" />
-                          </div>
+                          <Icon className="w-32 h-32 text-teal-700 opacity-90" />
                         </div>
                         <div className="p-4">
                           <div className="flex items-center justify-between">

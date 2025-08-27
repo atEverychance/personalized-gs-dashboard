@@ -140,10 +140,6 @@ function App() {
             <div className="mb-8">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Care Services</h2>
-                <button className="text-blue-600 font-semibold flex items-center space-x-1">
-                  <span>View all</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
               </div>
               
               {/* For You - Personalized Recommendations */}
@@ -229,9 +225,38 @@ function App() {
                 </div>
               </div>
 
+              {/* Quick Action */}
+              <div className="mb-6">
+                <div className="flex justify-between items-center mb-3">
+                  <h2 className="text-xl font-bold">Quick Action</h2>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    'Add/Transfer a Prescription',
+                    'Book a Counselling Session',
+                    'Book a Telemed consultation',
+                    'Book a Pharmacist consultation',
+                  ].map((label) => (
+                    <button
+                      key={label}
+                      className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between"
+                    >
+                      <span className="text-sm font-medium text-gray-800">{label}</span>
+                      <ChevronRight className="w-4 h-4 text-gray-400" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* Quick Access Services */}
               <div className="mb-4">
-                <p className="text-gray-600 font-medium mb-3">Most Popular</p>
+                <div className="flex justify-between items-center mb-3">
+                  <p className="text-gray-600 font-medium">Most Popular</p>
+                  <button className="text-blue-600 font-semibold flex items-center space-x-1">
+                    <span>View all</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { label: 'Mental Health', Icon: Brain },

@@ -37,7 +37,7 @@ function App() {
             </div>
           )}
         </button>
-        
+
         <div className="bg-teal-700 rounded-full p-1 flex">
           <button
             onClick={() => setActiveMode('coverage')}
@@ -71,7 +71,7 @@ function App() {
             )}
           </button>
         </div>
-        
+
         <button className="relative" onClick={() => navigate('/chat')} aria-label="Messages">
           <MessageCircle className="w-6 h-6" />
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -92,15 +92,15 @@ function App() {
                 <p className="text-blue-600 font-semibold">2 appointments</p>
                 <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
               </div>
-              
+
               <div className="flex space-x-3 overflow-x-hidden">
                 <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
                   <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
                     Starting soon
                   </div>
                   <div className="flex items-center space-x-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face" 
+                    <img
+                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
                       alt="Doctor profile"
                       className="w-12 h-12 rounded-full"
                     />
@@ -111,12 +111,12 @@ function App() {
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                   </div>
                 </div>
-                
+
                 {/* Peek of next appointment card */}
                 <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
                   <div className="flex items-center space-x-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face" 
+                    <img
+                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
                       alt="Doctor profile"
                       className="w-12 h-12 rounded-full"
                     />
@@ -128,7 +128,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Pagination dots */}
               <div className="flex justify-center space-x-2 mt-4">
                 <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
@@ -295,7 +295,7 @@ function App() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              
+
               <div className="bg-gradient-to-r from-teal-500 to-cyan-400 rounded-xl p-4 text-white relative overflow-hidden">
                 <div className="absolute top-2 right-2 bg-white text-teal-600 text-xs px-2 py-1 rounded font-bold">
                   NEW
@@ -309,7 +309,7 @@ function App() {
                   <span>Learn more about travel coverage</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
-                
+
                 {/* Pagination dots */}
                 <div className="flex justify-center space-x-2 mt-4">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -332,7 +332,7 @@ function App() {
                   <span>Submit Claim</span>
                 </button>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
@@ -346,7 +346,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -359,7 +359,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -373,7 +373,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               <button className="w-full mt-4 text-blue-600 font-semibold flex items-center justify-center space-x-1">
                 <span>View all claims</span>
                 <ChevronRight className="w-4 h-4" />
@@ -495,7 +495,7 @@ function App() {
             {/* Benefits & Services */}
             <div className="mb-8">
               <h2 className="text-xl font-bold mb-4">Benefits & Services</h2>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
@@ -504,15 +504,15 @@ function App() {
                   <p className="font-medium mb-1">ID Cards</p>
                   <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
                     <Search className="w-5 h-5 text-purple-600" />
                   </div>
-                  <p className="font-medium mb-1">Find Care</p>
+                  <p className="font-medium mb-1">Provider Search</p>
                   <p className="text-gray-600 text-xs">Providers & Facilities</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
                     <Pill className="w-5 h-5 text-green-600" />
@@ -520,7 +520,7 @@ function App() {
                   <p className="font-medium mb-1">Personalized claim forms</p>
                   <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                     <MessageCircle className="w-5 h-5 text-orange-600" />
@@ -540,7 +540,7 @@ function App() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              
+
               <div className="bg-gradient-to-r from-teal-500 to-cyan-400 rounded-xl p-4 text-white relative overflow-hidden">
                 <div className="absolute top-2 right-2 bg-white text-teal-600 text-xs px-2 py-1 rounded font-bold">
                   NEW
@@ -554,7 +554,7 @@ function App() {
                   <span>Learn more about travel coverage</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
-                
+
                 <div className="flex justify-center space-x-2 mt-4">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   <div className="w-2 h-2 bg-gray-400 rounded-full"></div>

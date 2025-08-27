@@ -380,27 +380,118 @@ function App() {
               </button>
             </div>
 
-            {/* Coverage Summary */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-2">Coverage Summary</h2>
-              <div className="bg-white rounded-xl p-4 border border-gray-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="font-semibold text-lg">Health Plan Active</p>
-                    <p className="text-gray-600 text-sm">Premium Plan • Family Coverage</p>
+            {/* Coverage Summary (dark, edge-to-edge) */}
+            <div className="relative -mx-4 mb-8">
+              <div className="absolute inset-0 bg-teal-800"></div>
+              <div className="relative px-4 py-4 space-y-6 text-white">
+                <div className="px-0 mb-2 flex items-center space-x-2">
+                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-white" />
                   </div>
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-green-600" />
+                  <h2 className="text-2xl font-bold tracking-tight">Coverage Summary</h2>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-gray-200 text-gray-900">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <p className="font-semibold text-lg">Health Plan Active</p>
+                      <p className="text-gray-600 text-sm">Premium Plan • Family Coverage</p>
+                    </div>
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <Shield className="w-6 h-6 text-green-600" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-gray-600 text-sm">Deductible</p>
+                      <p className="font-semibold">$500 / $1,500</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-600 text-sm">Out-of-pocket max</p>
+                      <p className="font-semibold">$2,000 / $6,000</p>
+                    </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-gray-600 text-sm">Deductible</p>
-                    <p className="font-semibold">$500 / $1,500</p>
+
+                <div className="border-t border-white/10" />
+
+                <div>
+                  <div className="flex justify-between items-center mb-1">
+                    <h3 className="text-lg font-semibold text-white">Quick Actions</h3>
                   </div>
-                  <div>
-                    <p className="text-gray-600 text-sm">Out-of-pocket max</p>
-                    <p className="font-semibold">$2,000 / $6,000</p>
+                  <div className="space-y-2">
+                    {[
+                      'Coverage Lookup',
+                      'Travel Coverage',
+                      'Medication Prior Authorization',
+                      'Health and Dental Coverage',
+                      'Health Service Coverage',
+                      'Benefits Booklet',
+                    ].map((label) => (
+                      <button
+                        key={label}
+                        className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
+                      >
+                        <span className="text-sm font-medium text-gray-800">{label}</span>
+                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10" />
+
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Spending Account Balances</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="rounded-2xl p-4 border border-blue-100 bg-blue-50 text-teal-900">
+                      <div className="flex items-center">
+                        <div className="relative w-28 h-14 mr-4">
+                          <div
+                            className="absolute inset-0 rounded-b-full"
+                            style={{
+                              background:
+                                'conic-gradient(#0ea5a5 0deg, #0ea5a5 10deg, #e6f3ff 10deg 180deg)',
+                              borderTopLeftRadius: '7rem',
+                              borderTopRightRadius: '7rem',
+                            } as any}
+                          />
+                          <div className="absolute left-2 bottom-0 w-4 h-4 bg-teal-700 rounded-full" />
+                        </div>
+                        <div>
+                          <p className="text-2xl font-bold text-teal-800">$0</p>
+                          <p className="text-sm text-teal-700">remaining</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 flex items-center justify-between">
+                        <p className="font-semibold">Health Care Spending Account</p>
+                        <ChevronRight className="w-5 h-5 text-teal-700" />
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl p-4 border border-green-100 bg-green-50 text-teal-900">
+                      <div className="flex items-center">
+                        <div className="relative w-28 h-14 mr-4">
+                          <div
+                            className="absolute inset-0 rounded-b-full"
+                            style={{
+                              background:
+                                'conic-gradient(#065f46 0deg 140deg, #ffffff 140deg 180deg)',
+                              borderTopLeftRadius: '7rem',
+                              borderTopRightRadius: '7rem',
+                            } as any}
+                          />
+                          <div className="absolute left-2 bottom-0 w-4 h-4 bg-emerald-900 rounded-full" />
+                        </div>
+                        <div>
+                          <p className="text-2xl font-bold text-emerald-900">$956.91</p>
+                          <p className="text-sm text-emerald-800">remaining</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 flex items-center justify-between">
+                        <p className="font-semibold">Personal Spending Account</p>
+                        <ChevronRight className="w-5 h-5 text-emerald-800" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -431,7 +522,7 @@ function App() {
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
                     <Pill className="w-5 h-5 text-green-600" />
                   </div>
-                  <p className="font-medium mb-1">Pharmacy</p>
+                  <p className="font-medium mb-1">Personalized claim forms</p>
                   <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
                 </div>
                 

@@ -498,50 +498,6 @@ function App() {
               </div>
             </div>
 
-            {/* Benefits & Services */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4">Benefits & Services</h2>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-                    <FileText className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <p className="font-medium mb-1">ID Cards</p>
-                  <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
-                    <Search className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <p className="font-medium mb-1">Provider Search</p>
-                  <p className="text-gray-600 text-xs">Providers & Facilities</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
-                    <Pill className="w-5 h-5 text-green-600" />
-                  </div>
-                  <p className="font-medium mb-1">Personalized claim forms</p>
-                  <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
-                    <MessageCircle className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <p className="font-medium mb-1">Support</p>
-                  <p className="text-gray-600 text-xs">24/7 Help Center</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Discover (match Care tab) */}
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold">Discover</h2>
-                <button className="text-blue-600 font-semibold flex items-center space-x-1">
             {/* Spending Account Balances (separate light section) */}
             <div className="mb-8">
               <h3 className="text-lg font-semibold mb-2 text-gray-900">Spending Account Balances</h3>
@@ -587,6 +543,50 @@ function App() {
               </div>
             </div>
 
+            {/* Benefits & Services */}
+            <div className="mb-8">
+              <h2 className="text-xl font-bold mb-4">Benefits & Services</h2>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                    <FileText className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <p className="font-medium mb-1">ID Cards</p>
+                  <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                    <Search className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <p className="font-medium mb-1">Provider Search</p>
+                  <p className="text-gray-600 text-xs">Providers & Facilities</p>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                    <Pill className="w-5 h-5 text-green-600" />
+                  </div>
+                  <p className="font-medium mb-1">Personalized claim forms</p>
+                  <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
+                    <MessageCircle className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <p className="font-medium mb-1">Support</p>
+                  <p className="text-gray-600 text-xs">24/7 Help Center</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Discover (match Care tab) */}
+            <div className="mb-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Discover</h2>
+                <button className="text-blue-600 font-semibold flex items-center space-x-1">
                   <span>View all</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>

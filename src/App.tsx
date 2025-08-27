@@ -4,11 +4,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNotifications } from '@/context/NotificationsContext'
 
-type CareTab = 'forYou' | 'journey' | 'actions' | 'popular'
-
 function App() {
   const [activeMode, setActiveMode] = useState<'coverage' | 'care'>('care')
-  const [careTab, setCareTab] = useState<CareTab>('journey')
   const navigate = useNavigate()
   const { unreadCount } = useNotifications()
   return (
@@ -139,8 +136,8 @@ function App() {
               </div>
             </div>
 
-            {/* Care Services — Option C: Segmented Tabs */}
-            <div className="px-4 mb-4">
+            {/* Care Services — Option A: Segmented Surface Container */}
+            <div className="px-4 mb-8">
               <div className="inline-flex items-center space-x-2 mb-2">
                 <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
                   <Heart className="w-3.5 h-3.5 text-emerald-700" />
@@ -148,181 +145,143 @@ function App() {
                 <span className="text-xs font-semibold text-gray-800 tracking-wide">Care Services</span>
               </div>
 
-              {/* Segmented control */}
-              <div role="tablist" aria-label="Care Services" className="grid grid-cols-4 gap-2 bg-gray-100/60 p-1 rounded-full">
-                {([
-                  { key: 'forYou', label: 'For You' },
-                  { key: 'journey', label: 'Journey' },
-                  { key: 'actions', label: 'Actions' },
-                  { key: 'popular', label: 'Popular' },
-                ] as { key: CareTab; label: string }[]).map(({ key, label }) => (
-                  <button
-                    key={key}
-                    role="tab"
-                    aria-selected={careTab === key}
-                    aria-controls={`panel-${key}`}
-                    onClick={() => setCareTab(key)}
-                    className={`h-10 rounded-full text-sm font-medium transition ${
-                      careTab === key
-                        ? 'bg-white text-teal-700 ring-1 ring-teal-200 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-800'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Panels */}
-            <div className="px-4 mb-8">
-              {/* For You panel */}
-              <div
-                id="panel-forYou"
-                role="tabpanel"
-                hidden={careTab !== 'forYou'}
-                className="space-y-3"
-              >
-                <div className="flex items-center space-x-2 mb-1">
-                  <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">✨</span>
-                  </div>
-                  <p className="text-gray-800 font-semibold">For You</p>
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Based on your goals</span>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                          <Plus className="w-5 h-5 text-green-600" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-800">Personalized Nutrition</p>
-                          <p className="text-sm text-gray-600">Tailored meal plans • Expert guidance</p>
-                        </div>
-                      </div>
-                      <button className="bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
+              <div className="rounded-2xl bg-emerald-50/60 ring-1 ring-emerald-100 p-4 space-y-6">
+                {/* For You */}
+                <div>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">✨</span>
                     </div>
+                    <p className="text-gray-800 font-semibold">For You</p>
+                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Based on your goals</span>
                   </div>
 
-                  <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-4 border border-pink-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
-                          <Heart className="w-5 h-5 text-pink-600" />
+                  <div className="space-y-3">
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <Plus className="w-5 h-5 text-green-600" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-800">Personalized Nutrition</p>
+                            <p className="text-sm text-gray-600">Tailored meal plans • Expert guidance</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-semibold text-gray-800">Hormonal Health</p>
-                          <p className="text-sm text-gray-600">Specialized care • Personalized approach</p>
-                        </div>
+                        <button className="bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
                       </div>
-                      <button className="bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-4 border border-pink-100">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                            <Heart className="w-5 h-5 text-pink-600" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-800">Hormonal Health</p>
+                            <p className="text-sm text-gray-600">Specialized care • Personalized approach</p>
+                          </div>
+                        </div>
+                        <button className="bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Journey panel */}
-              <div
-                id="panel-journey"
-                role="tabpanel"
-                hidden={careTab !== 'journey'}
-                className="space-y-3"
-              >
-                <h2 className="text-xl font-bold mb-2">Your Health Journey</h2>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                        <Target className="w-4 h-4 text-emerald-600" />
+                <div className="border-t border-emerald-100" />
+
+                {/* Your Health Journey */}
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Your Health Journey</h2>
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                          <Target className="w-4 h-4 text-emerald-600" />
+                        </div>
+                        <span className="font-semibold text-gray-800">Goal Progress</span>
                       </div>
-                      <span className="font-semibold text-gray-800">Goal Progress</span>
+                      <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
                     </div>
-                    <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
-                  </div>
 
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-700">Stress Management</span>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full">
+                            <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
+                          </div>
+                          <span className="text-xs text-gray-600">75%</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-700">Sleep Quality</span>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full">
+                            <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
+                          </div>
+                          <span className="text-xs text-gray-600">50%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t border-emerald-100" />
+
+                {/* Quick Action */}
+                <div>
+                  <div className="flex justify-between items-center mb-1">
+                    <h2 className="text-xl font-bold">Quick Action</h2>
+                  </div>
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-700">Stress Management</span>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-16 h-2 bg-gray-200 rounded-full">
-                          <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
-                        </div>
-                        <span className="text-xs text-gray-600">75%</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-700">Sleep Quality</span>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-16 h-2 bg-gray-200 rounded-full">
-                          <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
-                        </div>
-                        <span className="text-xs text-gray-600">50%</span>
-                      </div>
-                    </div>
+                    {[
+                      'Add/Transfer a Prescription',
+                      'Book a Counselling Session',
+                      'Book a Telemed consultation',
+                      'Book a Pharmacist consultation',
+                    ].map((label) => (
+                      <button
+                        key={label}
+                        className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
+                      >
+                        <span className="text-sm font-medium text-gray-800">{label}</span>
+                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                      </button>
+                    ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Actions panel */}
-              <div
-                id="panel-actions"
-                role="tabpanel"
-                hidden={careTab !== 'actions'}
-                className="space-y-2"
-              >
-                <div className="flex justify-between items-center mb-1">
-                  <h2 className="text-xl font-bold">Quick Action</h2>
-                </div>
-                {[
-                  'Add/Transfer a Prescription',
-                  'Book a Counselling Session',
-                  'Book a Telemed consultation',
-                  'Book a Pharmacist consultation',
-                ].map((label) => (
-                  <button
-                    key={label}
-                    className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
-                  >
-                    <span className="text-sm font-medium text-gray-800">{label}</span>
-                    <ChevronRight className="w-4 h-4 text-gray-400" />
-                  </button>
-                ))}
-              </div>
+                <div className="border-t border-emerald-100" />
 
-              {/* Popular panel */}
-              <div
-                id="panel-popular"
-                role="tabpanel"
-                hidden={careTab !== 'popular'}
-                className="space-y-3"
-              >
-                <div className="flex justify-between items-center">
-                  <p className="text-gray-800 font-semibold">Most Popular</p>
-                  <button className="text-blue-600 font-semibold flex items-center space-x-1">
-                    <span>View all</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: 'Mental Health', Icon: Brain },
-                    { label: 'Telemedicine', Icon: Stethoscope },
-                    { label: 'Pharmacy', Icon: Pill },
-                    { label: 'Well-being', Icon: Heart },
-                    { label: 'Total Health and Life Services', Icon: BriefcaseMedical },
-                  ].map(({ label, Icon }) => (
-                    <div key={label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-9 h-9 rounded-md bg-white/70 flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-teal-700" />
+                {/* Most Popular */}
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <p className="text-gray-800 font-semibold">Most Popular</p>
+                    <button className="text-blue-600 font-semibold flex items-center space-x-1">
+                      <span>View all</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: 'Mental Health', Icon: Brain },
+                      { label: 'Telemedicine', Icon: Stethoscope },
+                      { label: 'Pharmacy', Icon: Pill },
+                      { label: 'Well-being', Icon: Heart },
+                      { label: 'Total Health and Life Services', Icon: BriefcaseMedical },
+                    ].map(({ label, Icon }) => (
+                      <div key={label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-9 h-9 rounded-md bg-white/70 flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-teal-700" />
+                          </div>
+                          <span className="text-sm font-medium text-teal-900">{label}</span>
                         </div>
-                        <span className="text-sm font-medium text-teal-900">{label}</span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

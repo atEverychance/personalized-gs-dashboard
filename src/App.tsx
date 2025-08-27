@@ -400,28 +400,31 @@ function App() {
                 <div className="-mx-4 px-4" aria-label="Coverage quick actions">
                   <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
                     {[
-                      { label: 'Travel', Icon: Plane, img: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80&auto=format&fit=crop' },
-                      { label: 'Medication Prior Authorization', Icon: CheckSquare, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop' },
-                      { label: 'Health and Dental', Icon: Heart, img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fit=crop' },
-                      { label: 'Care Services', Icon: Stethoscope, img: 'https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=600&q=80&auto=format&fit=crop' },
-                      { label: 'Benefits Booklet', Icon: BookOpen, img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&q=80&auto=format&fit=crop' },
-                    ].map(({ label, Icon, img }) => (
+                      { label: 'Travel', Icon: Plane, img: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1200&q=80&auto=format&fit=crop', badgeText: 'Popular', badgeColor: 'bg-teal-600', accent: 'text-teal-700' },
+                      { label: 'Medication Prior Authorization', Icon: CheckSquare, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80&auto=format&fit=crop', badgeText: 'New', badgeColor: 'bg-amber-500', accent: 'text-amber-700' },
+                      { label: 'Health and Dental', Icon: Heart, img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200&q=80&auto=format&fit=crop', badgeText: 'Benefits', badgeColor: 'bg-pink-600', accent: 'text-pink-700' },
+                      { label: 'Care Services', Icon: Stethoscope, img: 'https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=1200&q=80&auto=format&fit=crop', badgeText: 'Care', badgeColor: 'bg-indigo-600', accent: 'text-indigo-700' },
+                      { label: 'Benefits Booklet', Icon: BookOpen, img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80&auto=format&fit=crop', badgeText: 'Guide', badgeColor: 'bg-sky-600', accent: 'text-sky-700' },
+                    ].map(({ label, Icon, img, badgeText, badgeColor, accent }) => (
                       <button
                         key={label}
-                        className="snap-start shrink-0 w-64 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden"
+                        className="snap-start shrink-0 w-72 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                         aria-label={label}
                       >
-                        <div className="relative h-40">
+                        <div className="relative h-44">
                           <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />
                           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/0" />
-                          <div className="absolute top-3 left-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow">
-                            <Icon className="w-5 h-5 text-teal-700" />
+                          <div className={`absolute top-3 left-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded ${badgeColor}`}>
+                            {badgeText}
+                          </div>
+                          <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow">
+                            <Icon className={`w-5 h-5 ${accent}`} />
                           </div>
                         </div>
                         <div className="p-4">
                           <div className="flex items-center justify-between">
-                            <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
-                            <ChevronRight className="w-4 h-4 text-gray-400" />
+                            <p className="font-semibold text-gray-900 text-base leading-snug">{label}</p>
+                            <ChevronRight className="w-5 h-5 text-gray-400" />
                           </div>
                         </div>
                       </button>

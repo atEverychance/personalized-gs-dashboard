@@ -384,20 +384,25 @@ function App() {
             <div className="relative -mx-4 mb-8">
               <div className="absolute inset-0 bg-teal-800"></div>
               <div className="relative px-4 py-4 space-y-6 text-white">
-                <div className="px-0 mb-2 flex items-center space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
+                <div className="px-0 mb-2 flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                      <Shield className="w-4 h-4 text-white" />
+                    </div>
+                    <h2 className="text-2xl font-bold tracking-tight">Coverage</h2>
                   </div>
-                  <h2 className="text-2xl font-bold tracking-tight">Coverage</h2>
+                  <button className="bg-blue-600 text-white rounded-lg px-3 py-2 text-sm font-semibold flex items-center space-x-2 active:scale-[0.98]">
+                    <Search className="w-4 h-4" />
+                    <span>Find</span>
+                  </button>
                 </div>
 
                 <div className="space-y-2">
                   {[
-                    'Coverage Lookup',
-                    'Travel Coverage',
+                    'Travel',
                     'Medication Prior Authorization',
-                    'Health and Dental Coverage',
-                    'Health Service Coverage',
+                    'Health and Dental',
+                    'Health Service',
                     'Benefits Booklet',
                   ].map((label) => (
                     <button

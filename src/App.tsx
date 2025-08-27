@@ -398,26 +398,31 @@ function App() {
                 </div>
 
                 <div className="-mx-4 px-4" aria-label="Coverage quick actions">
-                  <div className="flex overflow-x-auto snap-x snap-mandatory space-x-3 pb-1">
+                  <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
                     {[
-                      { label: 'Travel', Icon: Plane },
-                      { label: 'Medication Prior Authorization', Icon: CheckSquare },
-                      { label: 'Health and Dental', Icon: Heart },
-                      { label: 'Care Services', Icon: Stethoscope },
-                      { label: 'Benefits Booklet', Icon: BookOpen },
-                    ].map(({ label, Icon }) => (
+                      { label: 'Travel', Icon: Plane, img: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80&auto=format&fit=crop' },
+                      { label: 'Medication Prior Authorization', Icon: CheckSquare, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop' },
+                      { label: 'Health and Dental', Icon: Heart, img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fit=crop' },
+                      { label: 'Care Services', Icon: Stethoscope, img: 'https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=600&q=80&auto=format&fit=crop' },
+                      { label: 'Benefits Booklet', Icon: BookOpen, img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&q=80&auto=format&fit=crop' },
+                    ].map(({ label, Icon, img }) => (
                       <button
                         key={label}
-                        className="snap-start shrink-0 w-56 bg-white rounded-xl p-4 border border-white/10 text-left text-gray-900 active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                        className="snap-start shrink-0 w-64 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden"
                         aria-label={label}
                       >
-                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center mb-3">
-                          <Icon className="w-5 h-5 text-teal-600" />
+                        <div className="relative h-40">
+                          <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/0" />
+                          <div className="absolute top-3 left-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow">
+                            <Icon className="w-5 h-5 text-teal-700" />
+                          </div>
                         </div>
-                        <p className="font-semibold text-sm text-gray-900">{label}</p>
-                        <div className="mt-3 flex items-center text-teal-700 text-sm font-medium">
-                          <span>Open</span>
-                          <ChevronRight className="w-4 h-4 ml-1" />
+                        <div className="p-4">
+                          <div className="flex items-center justify-between">
+                            <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                            <ChevronRight className="w-4 h-4 text-gray-400" />
+                          </div>
                         </div>
                       </button>
                     ))}

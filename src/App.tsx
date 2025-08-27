@@ -137,8 +137,8 @@ function App() {
             </div>
 
             {/* Care Services — Direction 2: edge-to-edge tinted surface, non-sticky heading */}
-            <div className="relative mb-8">
-              <div className="absolute inset-x-0 top-0 bottom-0 bg-teal-800"></div>
+            <div className="relative -mx-4 mb-8">
+              <div className="absolute inset-0 bg-teal-800"></div>
               <div className="relative px-4 py-4 space-y-6 text-white">
                 <div className="px-0 mb-2 flex items-center space-x-2">
                   <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">

@@ -404,7 +404,7 @@ function App() {
                       { label: 'Medication Prior Authorization', Icon: CheckSquare, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80&auto=format&fit=crop', badgeText: 'New', badgeColor: 'bg-amber-500', accent: 'text-amber-700' },
                       { label: 'Health and Dental', Icon: Heart, img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200&q=80&auto=format&fit=crop', badgeText: 'Benefits', badgeColor: 'bg-pink-600', accent: 'text-pink-700' },
                       { label: 'Care Services', Icon: Stethoscope, img: 'https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=1200&q=80&auto=format&fit=crop', badgeText: 'Care', badgeColor: 'bg-indigo-600', accent: 'text-indigo-700' },
-                      { label: 'Benefits Booklet', Icon: BookOpen, img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80&auto=format&fit=crop', badgeText: 'Guide', badgeColor: 'bg-sky-600', accent: 'text-sky-700' },
+                      { label: 'Benefits Booklet', Icon: BookOpen, img: 'https://images.unsplash.com/photo-1585779034823-7e9ac7ae357d?w=1200&q=80&auto=format&fit=crop', badgeText: 'Guide', badgeColor: 'bg-sky-600', accent: 'text-sky-700' },
                     ].map(({ label, Icon, img, badgeText, badgeColor, accent }) => (
                       <button
                         key={label}

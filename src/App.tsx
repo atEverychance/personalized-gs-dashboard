@@ -136,21 +136,23 @@ function App() {
               </div>
             </div>
 
-            {/* Care Services - Editorial Stripe + Elevated Card Stack */}
-            <div className="relative mb-10">
-              <div className="absolute inset-x-0 -top-6 h-36 bg-gradient-to-r from-teal-600 to-cyan-500"></div>
-
-              <div className="relative z-10 -mt-10 px-0 space-y-4">
-                {/* Care Services header pill */}
-                <div className="px-4">
-                  <div className="inline-flex items-center space-x-2 bg-white/90 text-teal-800 rounded-full px-3 py-1 shadow-sm ring-1 ring-gray-100">
-                    <Heart className="w-4 h-4" />
-                    <span className="text-xs font-semibold tracking-wide">Care Services</span>
+            {/* Care Services — Segmented Surface + Sticky Subheader */}
+            <div className="sticky top-16 z-20 bg-white/80 backdrop-blur-sm">
+              <div className="px-4 py-2">
+                <div className="inline-flex items-center space-x-2">
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <Heart className="w-3.5 h-3.5 text-emerald-700" />
                   </div>
+                  <span className="text-xs font-semibold text-gray-800 tracking-wide">Care Services</span>
                 </div>
+              </div>
+              <div className="h-px bg-gray-100" />
+            </div>
 
-                {/* For You - card */}
-                <div className="mx-4 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 p-4">
+            <div className="mb-8 px-4">
+              <div className="rounded-2xl bg-emerald-50/60 ring-1 ring-emerald-100 p-4 space-y-6">
+                {/* For You */}
+                <div>
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs font-bold">✨</span>
@@ -192,10 +194,10 @@ function App() {
                   </div>
                 </div>
 
-                {/* Your Health Journey - card */}
-                <div className="mx-4 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 p-4">
+                {/* Your Health Journey */}
+                <div>
                   <h2 className="text-xl font-bold mb-4">Your Health Journey</h2>
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100 mb-1">
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -229,8 +231,8 @@ function App() {
                   </div>
                 </div>
 
-                {/* Quick Action - card */}
-                <div className="mx-4 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 p-4">
+                {/* Quick Action */}
+                <div>
                   <div className="flex justify-between items-center mb-3">
                     <h2 className="text-xl font-bold">Quick Action</h2>
                   </div>
@@ -252,8 +254,8 @@ function App() {
                   </div>
                 </div>
 
-                {/* Most Popular - card */}
-                <div className="mx-4 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 p-4">
+                {/* Most Popular */}
+                <div>
                   <div className="flex justify-between items-center mb-3">
                     <p className="text-gray-800 font-semibold">Most Popular</p>
                     <button className="text-blue-600 font-semibold flex items-center space-x-1">

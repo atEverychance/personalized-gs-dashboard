@@ -1,5 +1,5 @@
 import './App.css'
-import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical } from 'lucide-react'
+import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical, Plane, CheckSquare, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNotifications } from '@/context/NotificationsContext'
@@ -397,22 +397,32 @@ function App() {
                   </button>
                 </div>
 
-                <div className="space-y-2">
-                  {[
-                    'Travel',
-                    'Medication Prior Authorization',
-                    'Health and Dental',
-                    'Care Services',
-                    'Benefits Booklet',
-                  ].map((label) => (
-                    <button
-                      key={label}
-                      className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
-                    >
-                      <span className="text-sm font-medium text-gray-800">{label}</span>
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
-                    </button>
-                  ))}
+                <div className="-mx-4 px-4" aria-label="Coverage quick actions">
+                  <div className="flex overflow-x-auto snap-x snap-mandatory space-x-3 pb-1">
+                    {[
+                      { label: 'Travel', Icon: Plane },
+                      { label: 'Medication Prior Authorization', Icon: CheckSquare },
+                      { label: 'Health and Dental', Icon: Heart },
+                      { label: 'Care Services', Icon: Stethoscope },
+                      { label: 'Benefits Booklet', Icon: BookOpen },
+                    ].map(({ label, Icon }) => (
+                      <button
+                        key={label}
+                        className="snap-start shrink-0 w-56 bg-white rounded-xl p-4 border border-white/10 text-left text-gray-900 active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                        aria-label={label}
+                      >
+                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center mb-3">
+                          <Icon className="w-5 h-5 text-teal-600" />
+                        </div>
+                        <p className="font-semibold text-sm text-gray-900">{label}</p>
+                        <div className="mt-3 flex items-center text-teal-700 text-sm font-medium">
+                          <span>Open</span>
+                          <ChevronRight className="w-4 h-4 ml-1" />
+                        </div>
+                      </button>
+                    ))}
+                    <div className="shrink-0 w-3" />
+                  </div>
                 </div>
 
                 <div className="border-t border-white/10" />

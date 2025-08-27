@@ -136,118 +136,151 @@ function App() {
               </div>
             </div>
 
-            {/* Care Services */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold">Care Services</h2>
-                <button className="text-blue-600 font-semibold flex items-center space-x-1">
-                  <span>View all</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-              
-              {/* For You - Personalized Recommendations */}
-              <div className="mb-6">
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">✨</span>
+            {/* Care Services — Direction 2: edge-to-edge tinted surface, non-sticky heading */}
+            <div className="relative -mx-4 mb-8">
+              <div className="absolute inset-0 bg-teal-800"></div>
+              <div className="relative px-4 py-4 space-y-6 text-white">
+                <div className="px-0 mb-2 flex items-center space-x-2">
+                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                    <Heart className="w-4 h-4 text-white" />
                   </div>
-                  <p className="text-gray-800 font-semibold">For You</p>
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Based on your goals</span>
+                  <h2 className="text-2xl font-bold tracking-tight">Care Services</h2>
                 </div>
-                
-                <div className="space-y-3">
-                  {/* Personalized Nutrition - Based on user goals */}
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                          <Plus className="w-5 h-5 text-green-600" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-800">Personalized Nutrition</p>
-                          <p className="text-sm text-gray-600">Tailored meal plans • Expert guidance</p>
-                        </div>
-                      </div>
-                      <button className="bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
+                {/* For You */}
+                <div>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">✨</span>
                     </div>
+                    <p className="text-lg text-white font-semibold">For You</p>
+                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Based on your goals</span>
                   </div>
 
-                  {/* Hormonal Health - Based on user profile */}
-                  <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-4 border border-pink-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
-                          <Heart className="w-5 h-5 text-pink-600" />
+                  <div className="space-y-3">
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <Plus className="w-5 h-5 text-green-600" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-800">Personalized Nutrition</p>
+                            <p className="text-sm text-gray-600">Tailored meal plans • Expert guidance</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-semibold text-gray-800">Hormonal Health</p>
-                          <p className="text-sm text-gray-600">Specialized care • Personalized approach</p>
-                        </div>
+                        <button className="bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
                       </div>
-                      <button className="bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
                     </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Quick Access Services */}
-              <div className="mb-4">
-                <p className="text-gray-600 font-medium mb-3">Quick Access</p>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: 'Mental Health', Icon: Brain },
-                    { label: 'Telemedicine', Icon: Stethoscope },
-                    { label: 'Pharmacy', Icon: Pill },
-                    { label: 'Well-being', Icon: Heart },
-                    { label: 'Total Health and Life Services', Icon: BriefcaseMedical },
-                  ].map(({ label, Icon }) => (
-                    <div key={label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-9 h-9 rounded-md bg-white/70 flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-teal-700" />
+                    <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-4 border border-pink-100">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                            <Heart className="w-5 h-5 text-pink-600" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-800">Hormonal Health</p>
+                            <p className="text-sm text-gray-600">Specialized care • Personalized approach</p>
+                          </div>
                         </div>
-                        <span className="text-sm font-medium text-teal-900">{label}</span>
+                        <button className="bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Start</button>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Your Health Journey */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4">Your Health Journey</h2>
-              
-              <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100 mb-4">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                      <Target className="w-4 h-4 text-emerald-600" />
+                <div className="border-t border-white/10" />
+
+                {/* Your Health Journey */}
+                <div>
+                  <h2 className="text-lg font-semibold mb-2 text-white">Your Health Journey</h2>
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                          <Target className="w-4 h-4 text-emerald-600" />
+                        </div>
+                        <span className="font-semibold text-gray-800">Goal Progress</span>
+                      </div>
+                      <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
                     </div>
-                    <span className="font-semibold text-gray-800">Goal Progress</span>
+
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-700">Stress Management</span>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full">
+                            <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
+                          </div>
+                          <span className="text-xs text-gray-600">75%</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-700">Sleep Quality</span>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-16 h-2 bg-gray-200 rounded-full">
+                            <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
+                          </div>
+                          <span className="text-xs text-gray-600">50%</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">2 of 3 active</span>
                 </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-700">Stress Management</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-gray-200 rounded-full">
-                        <div className="w-12 h-2 bg-emerald-500 rounded-full"></div>
-                      </div>
-                      <span className="text-xs text-gray-600">75%</span>
-                    </div>
+
+                <div className="border-t border-white/10" />
+
+                {/* Quick Action */}
+                <div>
+                  <div className="flex justify-between items-center mb-1">
+                    <h2 className="text-lg font-semibold text-white">Quick Action</h2>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-700">Sleep Quality</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-gray-200 rounded-full">
-                        <div className="w-8 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="space-y-2">
+                    {[
+                      'Add/Transfer a Prescription',
+                      'Book a Counselling Session',
+                      'Book a Telemed consultation',
+                      'Book a Pharmacist consultation',
+                    ].map((label) => (
+                      <button
+                        key={label}
+                        className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
+                      >
+                        <span className="text-sm font-medium text-gray-800">{label}</span>
+                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10" />
+
+                {/* Most Popular */}
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <p className="text-lg text-white font-semibold">Most Popular</p>
+                    <button className="text-teal-200 text-xs font-medium flex items-center space-x-1">
+                      <span>View all</span>
+                      <ChevronRight className="w-3 h-3 text-teal-200" />
+                    </button>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: 'Mental Health', Icon: Brain },
+                      { label: 'Telemedicine', Icon: Stethoscope },
+                      { label: 'Pharmacy', Icon: Pill },
+                      { label: 'Well-being', Icon: Heart },
+                      { label: 'Total Health and Life Services', Icon: BriefcaseMedical },
+                    ].map(({ label, Icon }) => (
+                      <div key={label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-9 h-9 rounded-md bg-white/70 flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-teal-700" />
+                          </div>
+                          <span className="text-sm font-medium text-teal-900">{label}</span>
+                        </div>
                       </div>
-                      <span className="text-xs text-gray-600">50%</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

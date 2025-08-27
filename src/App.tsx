@@ -561,7 +561,7 @@ function App() {
 
             {/* Benefits & Services */}
             <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4">Benefits & Services</h2>
+              <h2 className="text-xl font-bold mb-4">Do more with your claims</h2>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">

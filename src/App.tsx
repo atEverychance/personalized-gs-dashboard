@@ -136,16 +136,20 @@ function App() {
               </div>
             </div>
 
-            {/* Care Services — Option A: Segmented Surface Container */}
-            <div className="px-4 mb-8">
-              <div className="inline-flex items-center space-x-2 mb-2">
+            {/* Care Services — Direction 2: Sticky subheader + edge-to-edge tinted surface */}
+            {/* Sticky subheader */}
+            <div className="sticky top-12 z-20 px-4">
+              <div className="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 rounded-full inline-flex items-center space-x-2 px-2 py-1 shadow-sm ring-1 ring-gray-200">
                 <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
                   <Heart className="w-3.5 h-3.5 text-emerald-700" />
                 </div>
                 <span className="text-xs font-semibold text-gray-800 tracking-wide">Care Services</span>
               </div>
+            </div>
 
-              <div className="rounded-2xl bg-emerald-50/60 ring-1 ring-emerald-100 p-4 space-y-6">
+            {/* Edge-to-edge tinted surface */}
+            <div className="px-4 mb-8">
+              <div className="-mx-4 bg-emerald-50/60 ring-1 ring-emerald-100/70 px-4 py-4 space-y-6">
                 {/* For You */}
                 <div>
                   <div className="flex items-center space-x-2 mb-2">

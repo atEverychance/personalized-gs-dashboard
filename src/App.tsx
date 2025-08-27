@@ -393,7 +393,7 @@ function App() {
                   </div>
                   <button className="bg-blue-600 text-white rounded-lg px-3 py-2 text-sm font-semibold flex items-center space-x-2 active:scale-[0.98]">
                     <Search className="w-4 h-4" />
-                    <span>Find</span>
+                    <span>Search</span>
                   </button>
                 </div>
 
@@ -402,7 +402,7 @@ function App() {
                     'Travel',
                     'Medication Prior Authorization',
                     'Health and Dental',
-                    'Health Service',
+                    'Care Services',
                     'Benefits Booklet',
                   ].map((label) => (
                     <button

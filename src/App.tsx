@@ -138,12 +138,12 @@ function App() {
 
             {/* Care Services — Direction 2: edge-to-edge tinted surface, non-sticky heading */}
             <div className="px-4 mb-8">
-              <div className="-mx-4 bg-emerald-50/60 ring-1 ring-emerald-100/70 px-4 py-4 space-y-6">
+              <div className="-mx-4 bg-teal-800 text-white ring-1 ring-teal-700/60 px-4 py-4 space-y-6">
                 <div className="px-0 mb-2 flex items-center space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <Heart className="w-4 h-4 text-emerald-700" />
+                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                    <Heart className="w-4 h-4 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Care Services</h2>
+                  <h2 className="text-2xl font-bold tracking-tight">Care Services</h2>
                 </div>
                 {/* For You */}
                 <div>
@@ -151,7 +151,7 @@ function App() {
                     <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs font-bold">✨</span>
                     </div>
-                    <p className="text-lg text-gray-800 font-semibold">For You</p>
+                    <p className="text-lg text-white font-semibold">For You</p>
                     <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Based on your goals</span>
                   </div>
 
@@ -188,11 +188,11 @@ function App() {
                   </div>
                 </div>
 
-                <div className="border-t border-emerald-100" />
+                <div className="border-t border-white/10" />
 
                 {/* Your Health Journey */}
                 <div>
-                  <h2 className="text-lg font-semibold mb-2">Your Health Journey</h2>
+                  <h2 className="text-lg font-semibold mb-2 text-white">Your Health Journey</h2>
                   <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center space-x-2">
@@ -227,12 +227,12 @@ function App() {
                   </div>
                 </div>
 
-                <div className="border-t border-emerald-100" />
+                <div className="border-t border-white/10" />
 
                 {/* Quick Action */}
                 <div>
                   <div className="flex justify-between items-center mb-1">
-                    <h2 className="text-lg font-semibold">Quick Action</h2>
+                    <h2 className="text-lg font-semibold text-white">Quick Action</h2>
                   </div>
                   <div className="space-y-2">
                     {[
@@ -252,15 +252,15 @@ function App() {
                   </div>
                 </div>
 
-                <div className="border-t border-emerald-100" />
+                <div className="border-t border-white/10" />
 
                 {/* Most Popular */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <p className="text-lg text-gray-800 font-semibold">Most Popular</p>
-                    <button className="text-blue-600 text-xs font-medium flex items-center space-x-1">
+                    <p className="text-lg text-white font-semibold">Most Popular</p>
+                    <button className="text-teal-200 text-xs font-medium flex items-center space-x-1">
                       <span>View all</span>
-                      <ChevronRight className="w-3 h-3" />
+                      <ChevronRight className="w-3 h-3 text-teal-200" />
                     </button>
                   </div>
                   <div className="grid grid-cols-2 gap-4">

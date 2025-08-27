@@ -417,7 +417,7 @@ function App() {
 
                 <div className="border-t border-white/10" />
 
-                <div>
+                <div className="hidden">
                   <h3 className="text-lg font-semibold text-white mb-2">Spending Account Balances</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* HCSA */}
@@ -491,6 +491,51 @@ function App() {
                         <p className="font-semibold">Personal Spending Account</p>
                         <ChevronRight className="w-5 h-5 text-emerald-800" />
                       </div>
+            {/* Spending Account Balances (separate light section) */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">Spending Account Balances</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="rounded-2xl p-4 border border-blue-100 bg-blue-50 text-teal-900">
+                  <div className="flex items-center">
+                    <div className="mr-4">
+                      <svg width="96" height="96" viewBox="0 0 36 36">
+                        <circle cx="18" cy="18" r="16" fill="#eaf4ff" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#eaf4ff" strokeWidth="4" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#0ea5a5" strokeWidth="4" strokeDasharray="0 88" transform="rotate(-90 18 18)" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-teal-800">$0</p>
+                      <p className="text-sm text-teal-700">remaining</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="font-semibold">Health Care Spending Account</p>
+                    <ChevronRight className="w-5 h-5 text-teal-700" />
+                  </div>
+                </div>
+                <div className="rounded-2xl p-4 border border-green-100 bg-green-50 text-teal-900">
+                  <div className="flex items-center">
+                    <div className="mr-4">
+                      <svg width="96" height="96" viewBox="0 0 36 36">
+                        <circle cx="18" cy="18" r="16" fill="#ecfdf5" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#ffffff" strokeWidth="4" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#065f46" strokeWidth="4" strokeDasharray="62 88" transform="rotate(-90 18 18)" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-emerald-900">$956.91</p>
+                      <p className="text-sm text-emerald-800">remaining</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="font-semibold">Personal Spending Account</p>
+                    <ChevronRight className="w-5 h-5 text-emerald-800" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
                     </div>
                   </div>
                 </div>

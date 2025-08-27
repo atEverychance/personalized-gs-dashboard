@@ -37,7 +37,7 @@ function App() {
             </div>
           )}
         </button>
-        
+
         <div className="bg-teal-700 rounded-full p-1 flex">
           <button
             onClick={() => setActiveMode('coverage')}
@@ -71,7 +71,7 @@ function App() {
             )}
           </button>
         </div>
-        
+
         <button className="relative" onClick={() => navigate('/chat')} aria-label="Messages">
           <MessageCircle className="w-6 h-6" />
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -92,15 +92,15 @@ function App() {
                 <p className="text-blue-600 font-semibold">2 appointments</p>
                 <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
               </div>
-              
+
               <div className="flex space-x-3 overflow-x-hidden">
                 <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
                   <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
                     Starting soon
                   </div>
                   <div className="flex items-center space-x-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face" 
+                    <img
+                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
                       alt="Doctor profile"
                       className="w-12 h-12 rounded-full"
                     />
@@ -111,12 +111,12 @@ function App() {
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                   </div>
                 </div>
-                
+
                 {/* Peek of next appointment card */}
                 <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
                   <div className="flex items-center space-x-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face" 
+                    <img
+                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
                       alt="Doctor profile"
                       className="w-12 h-12 rounded-full"
                     />
@@ -128,7 +128,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Pagination dots */}
               <div className="flex justify-center space-x-2 mt-4">
                 <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
@@ -295,7 +295,7 @@ function App() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              
+
               <div className="bg-gradient-to-r from-teal-500 to-cyan-400 rounded-xl p-4 text-white relative overflow-hidden">
                 <div className="absolute top-2 right-2 bg-white text-teal-600 text-xs px-2 py-1 rounded font-bold">
                   NEW
@@ -309,7 +309,7 @@ function App() {
                   <span>Learn more about travel coverage</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
-                
+
                 {/* Pagination dots */}
                 <div className="flex justify-center space-x-2 mt-4">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -332,7 +332,7 @@ function App() {
                   <span>Submit Claim</span>
                 </button>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
@@ -346,7 +346,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -359,7 +359,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -373,34 +373,120 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               <button className="w-full mt-4 text-blue-600 font-semibold flex items-center justify-center space-x-1">
                 <span>View all claims</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Coverage Summary */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-2">Coverage Summary</h2>
-              <div className="bg-white rounded-xl p-4 border border-gray-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="font-semibold text-lg">Health Plan Active</p>
-                    <p className="text-gray-600 text-sm">Premium Plan • Family Coverage</p>
+            {/* Coverage (dark, edge-to-edge) */}
+            <div className="relative -mx-4 mb-8">
+              <div className="absolute inset-0 bg-teal-800"></div>
+              <div className="relative px-4 py-4 space-y-6 text-white">
+                <div className="px-0 mb-2 flex items-center space-x-2">
+                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-white" />
                   </div>
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-green-600" />
-                  </div>
+                  <h2 className="text-2xl font-bold tracking-tight">Coverage</h2>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-gray-600 text-sm">Deductible</p>
-                    <p className="font-semibold">$500 / $1,500</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600 text-sm">Out-of-pocket max</p>
-                    <p className="font-semibold">$2,000 / $6,000</p>
+
+                <div className="space-y-2">
+                  {[
+                    'Coverage Lookup',
+                    'Travel Coverage',
+                    'Medication Prior Authorization',
+                    'Health and Dental Coverage',
+                    'Health Service Coverage',
+                    'Benefits Booklet',
+                  ].map((label) => (
+                    <button
+                      key={label}
+                      className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
+                    >
+                      <span className="text-sm font-medium text-gray-800">{label}</span>
+                      <ChevronRight className="w-4 h-4 text-gray-400" />
+                    </button>
+                  ))}
+                </div>
+
+                <div className="border-t border-white/10" />
+
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Spending Account Balances</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* HCSA */}
+                    <div className="rounded-2xl p-4 border border-blue-100 bg-blue-50 text-teal-900">
+                      <div className="flex items-center">
+                        <div className="mr-4">
+                          <svg width="96" height="96" viewBox="0 0 36 36">
+                            <circle cx="18" cy="18" r="16" fill="#eaf4ff" />
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="14"
+                              fill="none"
+                              stroke="#eaf4ff"
+                              strokeWidth="4"
+                            />
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="14"
+                              fill="none"
+                              stroke="#0ea5a5"
+                              strokeWidth="4"
+                              strokeDasharray="0 88"
+                              transform="rotate(-90 18 18)"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-2xl font-bold text-teal-800">$0</p>
+                          <p className="text-sm text-teal-700">remaining</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 flex items-center justify-between">
+                        <p className="font-semibold">Health Care Spending Account</p>
+                        <ChevronRight className="w-5 h-5 text-teal-700" />
+                      </div>
+                    </div>
+                    {/* Personal Spending */}
+                    <div className="rounded-2xl p-4 border border-green-100 bg-green-50 text-teal-900">
+                      <div className="flex items-center">
+                        <div className="mr-4">
+                          <svg width="96" height="96" viewBox="0 0 36 36">
+                            <circle cx="18" cy="18" r="16" fill="#ecfdf5" />
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="14"
+                              fill="none"
+                              stroke="#ffffff"
+                              strokeWidth="4"
+                            />
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="14"
+                              fill="none"
+                              stroke="#065f46"
+                              strokeWidth="4"
+                              strokeDasharray="62 88"
+                              transform="rotate(-90 18 18)"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-2xl font-bold text-emerald-900">$956.91</p>
+                          <p className="text-sm text-emerald-800">remaining</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 flex items-center justify-between">
+                        <p className="font-semibold">Personal Spending Account</p>
+                        <ChevronRight className="w-5 h-5 text-emerald-800" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -409,32 +495,32 @@ function App() {
             {/* Benefits & Services */}
             <div className="mb-8">
               <h2 className="text-xl font-bold mb-4">Benefits & Services</h2>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
                     <FileText className="w-5 h-5 text-blue-600" />
                   </div>
                   <p className="font-medium mb-1">ID Cards</p>
-                  <p className="text-gray-600 text-xs">Digital & Physical</p>
+                  <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
                     <Search className="w-5 h-5 text-purple-600" />
                   </div>
-                  <p className="font-medium mb-1">Find Care</p>
+                  <p className="font-medium mb-1">Provider Search</p>
                   <p className="text-gray-600 text-xs">Providers & Facilities</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
                     <Pill className="w-5 h-5 text-green-600" />
                   </div>
-                  <p className="font-medium mb-1">Pharmacy</p>
+                  <p className="font-medium mb-1">Personalized claim forms</p>
                   <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                     <MessageCircle className="w-5 h-5 text-orange-600" />
@@ -445,7 +531,7 @@ function App() {
               </div>
             </div>
 
-            {/* Discover */}
+            {/* Discover (match Care tab) */}
             <div className="mb-6">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Discover</h2>
@@ -454,31 +540,27 @@ function App() {
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              
-              <div className="flex space-x-3 overflow-x-hidden">
-                <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-xl p-4 text-white relative overflow-hidden flex-shrink-0 w-80">
-                  <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded font-bold">
-                    FREE
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Wellness Program</h3>
-                  <p className="text-sm mb-3 opacity-90">Join our wellness program and earn rewards for healthy activities.</p>
-                  <button className="text-white font-semibold flex items-center space-x-1">
-                    <span>Learn more</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
+
+              <div className="bg-gradient-to-r from-teal-500 to-cyan-400 rounded-xl p-4 text-white relative overflow-hidden">
+                <div className="absolute top-2 right-2 bg-white text-teal-600 text-xs px-2 py-1 rounded font-bold">
+                  NEW
                 </div>
-                
-                {/* Peek of next card */}
-                <div className="bg-gradient-to-r from-purple-900 to-purple-700 rounded-xl p-4 text-white relative overflow-hidden flex-shrink-0 w-80 opacity-60">
-                  <div className="absolute top-2 right-2 bg-yellow-500 text-black text-xs px-2 py-1 rounded font-bold">
-                    -20%
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Fitness Tracker</h3>
-                  <p className="text-sm mb-3 opacity-90">Get 20% off fitness trackers to monitor your health goals.</p>
-                  <button className="text-white font-semibold flex items-center space-x-1">
-                    <span>Shop now</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
+                <div className="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded flex items-center space-x-1">
+                  <span>✓ Eligible</span>
+                </div>
+                <h3 className="text-lg font-bold mb-2">Enhance Your Travel Insurance</h3>
+                <p className="text-sm mb-3 opacity-90">Through our partnership with SecuriGlobe, we offer reliable and tailored travel insurance solutions for your needs.</p>
+                <button className="text-white font-semibold flex items-center space-x-1">
+                  <span>Learn more about travel coverage</span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+
+                <div className="flex justify-center space-x-2 mt-4">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                 </div>
               </div>
             </div>

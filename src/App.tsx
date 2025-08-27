@@ -1,5 +1,5 @@
 import './App.css'
-import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical } from 'lucide-react'
+import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical, Plane, CheckSquare, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNotifications } from '@/context/NotificationsContext'
@@ -384,35 +384,56 @@ function App() {
             <div className="relative -mx-4 mb-8">
               <div className="absolute inset-0 bg-teal-800"></div>
               <div className="relative px-4 py-4 space-y-6 text-white">
-                <div className="px-0 mb-2 flex items-center space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
+                <div className="px-0 mb-2 flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-6 h-6 rounded-full bg-teal-600/60 flex items-center justify-center">
+                      <Shield className="w-4 h-4 text-white" />
+                    </div>
+                    <h2 className="text-2xl font-bold tracking-tight">Coverage</h2>
                   </div>
-                  <h2 className="text-2xl font-bold tracking-tight">Coverage</h2>
+                  <button className="bg-blue-600 text-white rounded-lg px-3 py-2 text-sm font-semibold flex items-center space-x-2 active:scale-[0.98]">
+                    <Search className="w-4 h-4" />
+                    <span>Search</span>
+                  </button>
                 </div>
 
-                <div className="space-y-2">
-                  {[
-                    'Coverage Lookup',
-                    'Travel Coverage',
-                    'Medication Prior Authorization',
-                    'Health and Dental Coverage',
-                    'Health Service Coverage',
-                    'Benefits Booklet',
-                  ].map((label) => (
-                    <button
-                      key={label}
-                      className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
-                    >
-                      <span className="text-sm font-medium text-gray-800">{label}</span>
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
-                    </button>
-                  ))}
+                <div className="-mx-4 px-4" aria-label="Coverage quick actions">
+                  <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
+                    {[
+                      { label: 'Travel', Icon: Plane, badgeText: 'Popular', badgeColor: 'bg-teal-600' },
+                      { label: 'Medication Prior Authorization', Icon: CheckSquare, badgeText: 'New', badgeColor: 'bg-amber-500' },
+                      { label: 'Health and Dental', Icon: Heart, badgeText: 'Benefits', badgeColor: 'bg-rose-600' },
+                      { label: 'Care Services', Icon: Stethoscope, badgeText: 'Benefits', badgeColor: 'bg-indigo-600' },
+                      { label: 'Benefits Booklet', Icon: BookOpen, badgeText: 'PDF', badgeColor: 'bg-sky-600' },
+                    ].map(({ label, Icon, badgeText, badgeColor }) => (
+                      <button
+                        key={label}
+                        className="snap-start shrink-0 w-72 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                        aria-label={label}
+                      >
+                        <div className="relative h-44 flex items-center justify-center">
+                          {badgeText && (
+                            <div className={`absolute top-3 left-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded ${badgeColor}`}>
+                              {badgeText}
+                            </div>
+                          )}
+                          <Icon className="w-32 h-32 text-teal-700 opacity-90" />
+                        </div>
+                        <div className="p-4">
+                          <div className="flex items-center justify-between">
+                            <p className="font-semibold text-gray-900 text-base leading-snug">{label}</p>
+                            <ChevronRight className="w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                    <div className="shrink-0 w-3" />
+                  </div>
                 </div>
 
                 <div className="border-t border-white/10" />
 
-                <div>
+                <div className="hidden">
                   <h3 className="text-lg font-semibold text-white mb-2">Spending Account Balances</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* HCSA */}
@@ -486,7 +507,53 @@ function App() {
                         <p className="font-semibold">Personal Spending Account</p>
                         <ChevronRight className="w-5 h-5 text-emerald-800" />
                       </div>
+
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Spending Account Balances (separate light section) */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">Spending Account Balances</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="rounded-2xl p-4 border border-blue-100 bg-blue-50 text-teal-900">
+                  <div className="flex items-center">
+                    <div className="mr-4">
+                      <svg width="96" height="96" viewBox="0 0 36 36">
+                        <circle cx="18" cy="18" r="16" fill="#eaf4ff" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#eaf4ff" strokeWidth="4" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#0ea5a5" strokeWidth="4" strokeDasharray="0 88" transform="rotate(-90 18 18)" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-teal-800">$0</p>
+                      <p className="text-sm text-teal-700">remaining</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="font-semibold">Health Care Spending Account</p>
+                    <ChevronRight className="w-5 h-5 text-teal-700" />
+                  </div>
+                </div>
+                <div className="rounded-2xl p-4 border border-green-100 bg-green-50 text-teal-900">
+                  <div className="flex items-center">
+                    <div className="mr-4">
+                      <svg width="96" height="96" viewBox="0 0 36 36">
+                        <circle cx="18" cy="18" r="16" fill="#ecfdf5" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#ffffff" strokeWidth="4" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#065f46" strokeWidth="4" strokeDasharray="62 88" transform="rotate(-90 18 18)" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-emerald-900">$956.91</p>
+                      <p className="text-sm text-emerald-800">remaining</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="font-semibold">Personal Spending Account</p>
+                    <ChevronRight className="w-5 h-5 text-emerald-800" />
                   </div>
                 </div>
               </div>

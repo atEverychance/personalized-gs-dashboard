@@ -83,11 +83,11 @@ function App() {
 
 
       {/* Main Content */}
-      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 px-4 py-6">
+      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 px-4 pb-6">
         {activeMode === 'care' ? (
           <>
             {/* Today's Appointments - Tabbed Interface */}
-            <Tabs defaultValue="today" className="w-full mb-8">
+            <Tabs defaultValue="today" className="w-full mb-8 pt-6">
                 <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
                   <TabsTrigger 
                     value="today" 
@@ -154,24 +154,38 @@ function App() {
                 </TabsContent>
                 
                 <TabsContent value="upcoming" className="mt-4">
-                  <div className="text-center py-8">
+                  <div className="text-center py-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">No Upcoming Appointments</h3>
                     <p className="text-gray-600 text-sm mb-6">Book your next appointment to get started</p>
                     
-                    <div className="space-y-3">
-                      {[
-                        'Book a Counselling Session',
-                        'Book a Telemed consultation',
-                        'Book a Pharmacist consultation'
-                      ].map((label) => (
-                        <button
-                          key={label}
-                          className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition hover:bg-gray-50"
-                        >
-                          <span className="text-sm font-medium text-gray-800">{label}</span>
-                          <ChevronRight className="w-4 h-4 text-gray-400" />
-                        </button>
-                      ))}
+                    <div className="-mx-4 px-4" aria-label="Book appointments">
+                      <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
+                        {[
+                          { label: 'Book a Counselling Session', Icon: Brain, badgeText: 'Mental Health', badgeColor: 'bg-purple-600' },
+                          { label: 'Book a Telemed consultation', Icon: Stethoscope, badgeText: 'Video Call', badgeColor: 'bg-blue-600' },
+                          { label: 'Book a Pharmacist consultation', Icon: Pill, badgeText: 'Pharmacy', badgeColor: 'bg-teal-600' },
+                        ].map(({ label, Icon, badgeText, badgeColor }) => (
+                          <button
+                            key={label}
+                            className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-gray-200 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                            aria-label={label}
+                          >
+                            <div className="relative h-22 flex items-center justify-center">
+                              <div className={`absolute top-2 left-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded ${badgeColor}`}>
+                                {badgeText}
+                              </div>
+                              <Icon className="w-16 h-16 text-teal-700 opacity-90" />
+                            </div>
+                            <div className="p-2">
+                              <div className="flex items-center justify-between">
+                                <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                                <ChevronRight className="w-4 h-4 text-gray-400" />
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                        <div className="shrink-0 w-3" />
+                      </div>
                     </div>
                   </div>
                 </TabsContent>
@@ -287,21 +301,21 @@ function App() {
                       ].map(({ label, Icon, badgeText, badgeColor }) => (
                         <button
                           key={label}
-                          className="snap-start shrink-0 w-72 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                          className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                           aria-label={label}
                         >
-                          <div className="relative h-44 flex items-center justify-center">
+                          <div className="relative h-22 flex items-center justify-center">
                             {badgeText && (
-                              <div className={`absolute top-3 left-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded ${badgeColor}`}>
+                              <div className={`absolute top-2 left-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded ${badgeColor}`}>
                                 {badgeText}
                               </div>
                             )}
-                            <Icon className="w-32 h-32 text-teal-700 opacity-90" />
+                            <Icon className="w-16 h-16 text-teal-700 opacity-90" />
                           </div>
-                          <div className="p-4">
+                          <div className="p-2">
                             <div className="flex items-center justify-between">
-                              <p className="font-semibold text-gray-900 text-base leading-snug">{label}</p>
-                              <ChevronRight className="w-5 h-5 text-gray-400" />
+                              <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                              <ChevronRight className="w-4 h-4 text-gray-400" />
                             </div>
                           </div>
                         </button>

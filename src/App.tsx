@@ -472,21 +472,21 @@ function App() {
                     ].map(({ label, Icon, badgeText, badgeColor }) => (
                       <button
                         key={label}
-                        className="snap-start shrink-0 w-72 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                        className="snap-start shrink-0 w-[200px] bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                         aria-label={label}
                       >
-                        <div className="relative h-44 flex items-center justify-center">
+                        <div className="relative h-[124px] flex items-center justify-center">
                           {badgeText && (
-                            <div className={`absolute top-3 left-3 text-white text-[11px] font-semibold px-2.5 py-1 rounded ${badgeColor}`}>
+                            <div className={`absolute top-2 left-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded ${badgeColor}`}>
                               {badgeText}
                             </div>
                           )}
-                          <Icon className="w-32 h-32 text-teal-700 opacity-90" />
+                          <Icon className="w-[88px] h-[88px] text-teal-700 opacity-90" />
                         </div>
-                        <div className="p-4">
+                        <div className="p-3">
                           <div className="flex items-center justify-between">
-                            <p className="font-semibold text-gray-900 text-base leading-snug">{label}</p>
-                            <ChevronRight className="w-5 h-5 text-gray-400" />
+                            <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                            <ChevronRight className="w-4 h-4 text-gray-400" />
                           </div>
                         </div>
                       </button>

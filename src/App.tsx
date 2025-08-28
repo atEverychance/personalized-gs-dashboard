@@ -2,8 +2,8 @@ import './App.css'
 import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical, Plane, CheckSquare, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useNotifications } from '@/context/NotificationsContext'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { useNotifications } from './context/NotificationsContext'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from './components/ui/tabs'
 
 function App() {
   const [activeMode, setActiveMode] = useState<'coverage' | 'care'>('care')
@@ -83,7 +83,7 @@ function App() {
 
 
       {/* Main Content */}
-      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 pb-6">
+      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 pb-6 px-4">
         {activeMode === 'care' ? (
           <>
             {/* Today's Appointments - Tabbed Interface */}
@@ -388,7 +388,7 @@ function App() {
         ) : (
           <>
             {/* Claims Section */}
-            <div className="mb-8">
+            <div className="mb-8 -mx-4 px-4">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Claims</h2>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2">
@@ -628,7 +628,7 @@ function App() {
               <h2 className="text-xl font-bold mb-4">Do more with your claims</h2>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
                     <FileText className="w-5 h-5 text-blue-600" />
                   </div>
@@ -636,7 +636,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
                     <Search className="w-5 h-5 text-purple-600" />
                   </div>
@@ -644,7 +644,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Providers & Facilities</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
                     <Pill className="w-5 h-5 text-green-600" />
                   </div>
@@ -652,7 +652,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                     <MessageCircle className="w-5 h-5 text-orange-600" />
                   </div>

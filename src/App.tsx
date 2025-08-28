@@ -388,7 +388,7 @@ function App() {
         ) : (
           <>
             {/* Claims Section */}
-            <div className="mb-8 -mx-4 px-4">
+            <div className="mb-8 -mx-4 px-4 pt-6">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Claims</h2>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2">

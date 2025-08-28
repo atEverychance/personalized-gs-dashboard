@@ -2,7 +2,8 @@ import './App.css'
 import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircle, Search, Shield, Heart, Target, Brain, Stethoscope, BriefcaseMedical, Plane, CheckSquare, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useNotifications } from '@/context/NotificationsContext'
+import { useNotifications } from './context/NotificationsContext'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from './components/ui/tabs'
 
 function App() {
   const [activeMode, setActiveMode] = useState<'coverage' | 'care'>('care')
@@ -82,59 +83,110 @@ function App() {
 
 
       {/* Main Content */}
-      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 px-4 py-6">
+      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 pb-6 px-4">
         {activeMode === 'care' ? (
           <>
-            {/* Today's Appointments */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-2">Today's Appointments</h2>
-              <div className="mb-4">
-                <p className="text-blue-600 font-semibold">2 appointments</p>
-                <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
-              </div>
-
-              <div className="flex space-x-3 overflow-x-hidden">
-                <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
-                    Starting soon
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
-                      alt="Doctor profile"
-                      className="w-12 h-12 rounded-full"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold">1:00pm - 1:30pm</p>
-                      <p className="text-gray-600 text-sm">Telemedicine Appointment • Video Call</p>
+            {/* Today's Appointments - Tabbed Interface */}
+            <Tabs defaultValue="today" className="w-full mb-8">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
+                  <TabsTrigger 
+                    value="today" 
+                    className="relative data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"
+                  >
+                    Today's Appointments
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
+                      2
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="upcoming"
+                    className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"
+                  >
+                    Upcoming Appointments
+                  </TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="today" className="mt-4 px-4">
+                  <div className="mb-4">
+                    <p className="text-blue-600 font-semibold">2 appointments</p>
+                    <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
                   </div>
-                </div>
-
-                {/* Peek of next appointment card */}
-                <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
-                      alt="Doctor profile"
-                      className="w-12 h-12 rounded-full"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold">2:30pm - 3:00pm</p>
-                      <p className="text-gray-600 text-sm">Mental Health Session • Video Call</p>
+                  
+                  <div className="flex space-x-3 overflow-x-hidden">
+                    <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
+                      <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                        Starting soon
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
+                          alt="Doctor profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">1:00pm - 1:30pm</p>
+                          <p className="text-gray-600 text-sm">Telemedicine Appointment • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
-                  </div>
-                </div>
-              </div>
 
-              {/* Pagination dots */}
-              <div className="flex justify-center space-x-2 mt-4">
-                <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
-                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-              </div>
-            </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
+                          alt="Doctor profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">2:30pm - 3:00pm</p>
+                          <p className="text-gray-600 text-sm">Mental Health Session • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center space-x-2 mt-4">
+                    <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
+                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="upcoming" className="mt-4 px-4">
+                  <div className="text-center py-4">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">No Upcoming Appointments</h3>
+                    <p className="text-gray-600 text-sm mb-6">Book your next appointment to get started</p>
+                    
+                    <div className="-mx-4 px-4" aria-label="Book appointments">
+                      <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
+                        {[
+                          { label: 'Book a Counselling Session', Icon: Brain },
+                          { label: 'Book a Telemed consultation', Icon: Stethoscope },
+                          { label: 'Book a Pharmacist consultation', Icon: Pill },
+                        ].map(({ label, Icon }) => (
+                          <button
+                            key={label}
+                            className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-gray-200 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                            aria-label={label}
+                          >
+                            <div className="relative h-22 flex items-center justify-center">
+                              <Icon className="w-16 h-16 text-teal-700 opacity-90" />
+                            </div>
+                            <div className="p-2">
+                              <div className="flex items-center justify-between">
+                                <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                                <ChevronRight className="w-4 h-4 text-gray-400" />
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                        <div className="shrink-0 w-3" />
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
 
             {/* Care Services — Direction 2: edge-to-edge tinted surface, non-sticky heading */}
             <div className="relative -mx-4 mb-8">
@@ -235,21 +287,33 @@ function App() {
                   <div className="flex justify-between items-center mb-1">
                     <h2 className="text-lg font-semibold text-white">Quick Action</h2>
                   </div>
-                  <div className="space-y-2">
-                    {[
-                      'Add/Transfer a Prescription',
-                      'Book a Counselling Session',
-                      'Book a Telemed consultation',
-                      'Book a Pharmacist consultation',
-                    ].map((label) => (
-                      <button
-                        key={label}
-                        className="w-full bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between active:scale-[0.98] transition"
-                      >
-                        <span className="text-sm font-medium text-gray-800">{label}</span>
-                        <ChevronRight className="w-4 h-4 text-gray-400" />
-                      </button>
-                    ))}
+                  
+                  <div className="-mx-4 px-4" aria-label="Quick actions">
+                    <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
+                      {[
+                        { label: 'Add/Transfer a Prescription', Icon: Pill },
+                        { label: 'Book a Counselling Session', Icon: Brain },
+                        { label: 'Book a Telemed consultation', Icon: Stethoscope },
+                        { label: 'Book a Pharmacist consultation', Icon: Pill },
+                      ].map(({ label, Icon }) => (
+                        <button
+                          key={label}
+                          className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
+                          aria-label={label}
+                        >
+                          <div className="relative h-22 flex items-center justify-center">
+                            <Icon className="w-16 h-16 text-teal-700 opacity-90" />
+                          </div>
+                          <div className="p-2">
+                            <div className="flex items-center justify-between">
+                              <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                              <ChevronRight className="w-4 h-4 text-gray-400" />
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                      <div className="shrink-0 w-3" />
+                    </div>
                   </div>
                 </div>
 
@@ -324,7 +388,7 @@ function App() {
         ) : (
           <>
             {/* Claims Section */}
-            <div className="mb-8">
+            <div className="mb-8 -mx-4 px-4">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Claims</h2>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2">
@@ -334,7 +398,7 @@ function App() {
               </div>
 
               <div className="space-y-3">
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Annual Physical Exam</p>
@@ -347,7 +411,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Prescription Refill</p>
@@ -360,7 +424,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Dental Cleaning</p>
@@ -564,7 +628,7 @@ function App() {
               <h2 className="text-xl font-bold mb-4">Do more with your claims</h2>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-3">
                     <FileText className="w-5 h-5 text-blue-600" />
                   </div>
@@ -572,7 +636,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Add to Apple Wallet or Google Wallet</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-3">
                     <Search className="w-5 h-5 text-purple-600" />
                   </div>
@@ -580,7 +644,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Providers & Facilities</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">
                     <Pill className="w-5 h-5 text-green-600" />
                   </div>
@@ -588,7 +652,7 @@ function App() {
                   <p className="text-gray-600 text-xs">Prescriptions & Refills</p>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                     <MessageCircle className="w-5 h-5 text-orange-600" />
                   </div>

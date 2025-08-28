@@ -3,6 +3,7 @@ import { Bell, ChevronRight, Home, FileText, Tag, Menu, Plus, Pill, MessageCircl
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useNotifications } from '@/context/NotificationsContext'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 
 function App() {
   const [activeMode, setActiveMode] = useState<'coverage' | 'care'>('care')
@@ -85,55 +86,113 @@ function App() {
       <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 px-4 py-6">
         {activeMode === 'care' ? (
           <>
-            {/* Today's Appointments */}
+            {/* Today's Appointments - Tabbed Interface */}
             <div className="mb-8">
-              <h2 className="text-xl font-bold mb-2">Today's Appointments</h2>
-              <div className="mb-4">
-                <p className="text-blue-600 font-semibold">2 appointments</p>
-                <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
-              </div>
-
-              <div className="flex space-x-3 overflow-x-hidden">
-                <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
-                    Starting soon
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
-                      alt="Doctor profile"
-                      className="w-12 h-12 rounded-full"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold">1:00pm - 1:30pm</p>
-                      <p className="text-gray-600 text-sm">Telemedicine Appointment • Video Call</p>
+              <Tabs defaultValue="today" className="w-full">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
+                  <TabsTrigger 
+                    value="today" 
+                    className="relative data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"
+                  >
+                    Today's Appointments
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
+                      2
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="upcoming"
+                    className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"
+                  >
+                    Upcoming Appointments
+                  </TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="today" className="mt-4">
+                  <div className="mb-4">
+                    <p className="text-blue-600 font-semibold">2 appointments</p>
+                    <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
                   </div>
-                </div>
-
-                {/* Peek of next appointment card */}
-                <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
-                      alt="Doctor profile"
-                      className="w-12 h-12 rounded-full"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold">2:30pm - 3:00pm</p>
-                      <p className="text-gray-600 text-sm">Mental Health Session • Video Call</p>
+                  
+                  <div className="flex space-x-3 overflow-x-hidden">
+                    <div className="bg-white rounded-xl p-4 border-2 border-blue-200 relative flex-shrink-0 w-80">
+                      <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                        Starting soon
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=50&h=50&fit=crop&crop=face"
+                          alt="Doctor profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">1:00pm - 1:30pm</p>
+                          <p className="text-gray-600 text-sm">Telemedicine Appointment • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
-                  </div>
-                </div>
-              </div>
 
-              {/* Pagination dots */}
-              <div className="flex justify-center space-x-2 mt-4">
-                <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
-                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-              </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=50&h=50&fit=crop&crop=face"
+                          alt="Doctor profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">2:30pm - 3:00pm</p>
+                          <p className="text-gray-600 text-sm">Mental Health Session • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center space-x-2 mt-4">
+                    <div className="w-2 h-2 bg-gray-800 rounded-full"></div>
+                    <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="upcoming" className="mt-4">
+                  <div className="mb-4">
+                    <p className="text-gray-600 font-semibold">2 upcoming appointments</p>
+                    <p className="text-gray-600 text-sm">Book additional appointments through Quick Actions below.</p>
+                  </div>
+                  
+                  <div className="flex space-x-3 overflow-x-hidden">
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80">
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=50&h=50&fit=crop&crop=face"
+                          alt="Doctor profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">Tomorrow 10:00am - 10:30am</p>
+                          <p className="text-gray-600 text-sm">Mental Health Session • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 relative flex-shrink-0 w-80 opacity-60">
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=50&h=50&fit=crop&crop=face"
+                          alt="Pharmacist profile"
+                          className="w-12 h-12 rounded-full"
+                        />
+                        <div className="flex-1">
+                          <p className="font-semibold">Friday 2:00pm - 2:30pm</p>
+                          <p className="text-gray-600 text-sm">Pharmacist Consultation • Video Call</p>
+                        </div>
+                        <ChevronRight className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
 
             {/* Care Services — Direction 2: edge-to-edge tinted surface, non-sticky heading */}

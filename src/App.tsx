@@ -88,7 +88,7 @@ function App() {
           <>
             {/* Today's Appointments - Tabbed Interface */}
             <Tabs defaultValue="today" className="w-full mb-8">
-                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-none p-1">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
                   <TabsTrigger 
                     value="today" 
                     className="relative data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"

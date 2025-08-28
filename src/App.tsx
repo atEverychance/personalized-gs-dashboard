@@ -106,7 +106,7 @@ function App() {
                   </TabsTrigger>
                 </TabsList>
                 
-                <TabsContent value="today" className="mt-4">
+                <TabsContent value="today" className="mt-4 px-4">
                   <div className="mb-4">
                     <p className="text-blue-600 font-semibold">2 appointments</p>
                     <p className="text-gray-600 text-sm">Sessions will be available to join 10 minutes prior to the session start time.</p>
@@ -153,7 +153,7 @@ function App() {
                   </div>
                 </TabsContent>
                 
-                <TabsContent value="upcoming" className="mt-4">
+                <TabsContent value="upcoming" className="mt-4 px-4">
                   <div className="text-center py-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">No Upcoming Appointments</h3>
                     <p className="text-gray-600 text-sm mb-6">Book your next appointment to get started</p>

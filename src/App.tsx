@@ -398,7 +398,7 @@ function App() {
               </div>
 
               <div className="space-y-3">
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Annual Physical Exam</p>
@@ -411,7 +411,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Prescription Refill</p>
@@ -424,7 +424,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-4 border border-gray-200">
+                <div className="bg-white rounded-none p-4 border border-gray-200">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <p className="font-semibold">Dental Cleaning</p>

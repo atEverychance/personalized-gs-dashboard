@@ -83,12 +83,12 @@ function App() {
 
 
       {/* Main Content */}
-      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 px-4 pb-6">
+      <div className="bg-gray-50 text-gray-900 flex-1 rounded-t-3xl mt-4 pb-6">
         {activeMode === 'care' ? (
           <>
             {/* Today's Appointments - Tabbed Interface */}
             <Tabs defaultValue="today" className="w-full mb-8">
-                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-none p-1">
                   <TabsTrigger 
                     value="today" 
                     className="relative data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm rounded-md px-3 py-2 text-sm font-medium transition-all"
@@ -161,23 +161,21 @@ function App() {
                     <div className="-mx-4 px-4" aria-label="Book appointments">
                       <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
                         {[
-                          { label: 'Book a Counselling Session', Icon: Brain, badgeText: 'Mental Health', badgeColor: 'bg-purple-600' },
-                          { label: 'Book a Telemed consultation', Icon: Stethoscope, badgeText: 'Video Call', badgeColor: 'bg-blue-600' },
-                          { label: 'Book a Pharmacist consultation', Icon: Pill, badgeText: 'Pharmacy', badgeColor: 'bg-teal-600' },
-                        ].map(({ label, Icon, badgeText, badgeColor }) => (
+                          { label: 'Book a Counselling Session', Icon: Brain },
+                          { label: 'Book a Telemed consultation', Icon: Stethoscope },
+                          { label: 'Book a Pharmacist consultation', Icon: Pill },
+                        ].map(({ label, Icon }) => (
                           <button
                             key={label}
                             className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-gray-200 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                             aria-label={label}
                           >
                             <div className="relative h-22 flex items-center justify-center">
-                              <div className={`absolute top-2 left-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded ${badgeColor}`}>
-                                {badgeText}
-                              </div>
                               <Icon className="w-16 h-16 text-teal-700 opacity-90" />
                             </div>
                             <div className="p-2">
-                              <div className="flex items-center justify-center">
+                              <div className="flex items-center justify-between">
+                                <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
                                 <ChevronRight className="w-4 h-4 text-gray-400" />
                               </div>
                             </div>
@@ -293,26 +291,22 @@ function App() {
                   <div className="-mx-4 px-4" aria-label="Quick actions">
                     <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory space-x-4 pb-1">
                       {[
-                        { label: 'Add/Transfer a Prescription', Icon: Pill, badgeText: 'Popular', badgeColor: 'bg-green-600' },
-                        { label: 'Book a Counselling Session', Icon: Brain, badgeText: 'Mental Health', badgeColor: 'bg-purple-600' },
-                        { label: 'Book a Telemed consultation', Icon: Stethoscope, badgeText: 'Video Call', badgeColor: 'bg-blue-600' },
-                        { label: 'Book a Pharmacist consultation', Icon: Pill, badgeText: 'Pharmacy', badgeColor: 'bg-teal-600' },
-                      ].map(({ label, Icon, badgeText, badgeColor }) => (
+                        { label: 'Add/Transfer a Prescription', Icon: Pill },
+                        { label: 'Book a Counselling Session', Icon: Brain },
+                        { label: 'Book a Telemed consultation', Icon: Stethoscope },
+                        { label: 'Book a Pharmacist consultation', Icon: Pill },
+                      ].map(({ label, Icon }) => (
                         <button
                           key={label}
                           className="snap-start shrink-0 w-36 bg-white rounded-2xl border border-white/10 text-left active:scale-[0.98] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 overflow-hidden shadow-md hover:shadow-lg"
                           aria-label={label}
                         >
                           <div className="relative h-22 flex items-center justify-center">
-                            {badgeText && (
-                              <div className={`absolute top-2 left-2 text-white text-[10px] font-semibold px-2 py-0.5 rounded ${badgeColor}`}>
-                                {badgeText}
-                              </div>
-                            )}
                             <Icon className="w-16 h-16 text-teal-700 opacity-90" />
                           </div>
                           <div className="p-2">
-                            <div className="flex items-center justify-center">
+                            <div className="flex items-center justify-between">
+                              <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
                               <ChevronRight className="w-4 h-4 text-gray-400" />
                             </div>
                           </div>

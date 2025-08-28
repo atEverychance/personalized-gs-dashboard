@@ -87,7 +87,7 @@ function App() {
         {activeMode === 'care' ? (
           <>
             {/* Today's Appointments - Tabbed Interface */}
-            <Tabs defaultValue="today" className="w-full mb-8 pt-6">
+            <Tabs defaultValue="today" className="w-full mb-8">
                 <TabsList className="grid w-full grid-cols-2 bg-gray-100 rounded-lg p-1">
                   <TabsTrigger 
                     value="today" 
@@ -177,8 +177,7 @@ function App() {
                               <Icon className="w-16 h-16 text-teal-700 opacity-90" />
                             </div>
                             <div className="p-2">
-                              <div className="flex items-center justify-between">
-                                <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                              <div className="flex items-center justify-center">
                                 <ChevronRight className="w-4 h-4 text-gray-400" />
                               </div>
                             </div>
@@ -313,8 +312,7 @@ function App() {
                             <Icon className="w-16 h-16 text-teal-700 opacity-90" />
                           </div>
                           <div className="p-2">
-                            <div className="flex items-center justify-between">
-                              <p className="font-semibold text-gray-900 text-sm leading-snug">{label}</p>
+                            <div className="flex items-center justify-center">
                               <ChevronRight className="w-4 h-4 text-gray-400" />
                             </div>
                           </div>
